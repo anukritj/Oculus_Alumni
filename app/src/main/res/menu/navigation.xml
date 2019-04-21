@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_events"
+        android:icon="@drawable/ic_ticket"
+        android:title="Events"
+        android:orderInCategory="1" />
+
+    <item
+        android:id="@+id/navigation_google_assistant"
+        android:icon="@drawable/ic_chat_black_24dp"
+        android:title="Assistant"
+        android:orderInCategory="2"/>
+
+    <item
+        android:id="@+id/navigation_itinerary"
+        android:icon="@drawable/ic_add_alert_black_24dp"
+        android:title="Notifications"
+        android:orderInCategory="3"/>
+
+    <item
+        android:id="@+id/navigation_sponsors"
+        android:icon="@drawable/ic_handshake"
+        android:title="Friends"
+        android:orderInCategory="4"/>
+
+    <item
+        android:id="@+id/navigation_others"
+        android:icon="@drawable/ic_more_3"
+        android:title="Others"
+        android:orderInCategory="5"/>
+
+</menu>

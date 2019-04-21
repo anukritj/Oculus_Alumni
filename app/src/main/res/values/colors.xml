@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<resources>-->
+    <!--<color name="colorPrimaryDark">#273C93</color>-->
+    <!--<color name="colorPrimary">#32479c</color>-->
+    <!--<color name="colorAccent">#ff9b00</color>-->
+    <!--<color name="my_statusbar_color">#00FFFFFF</color>-->
+    <!--<color name="transparent">#aaffffff</color>-->
+    <!--<color name="white">#ffffff</color>-->
+    <!--<color name="shadow_color">#899ff5</color>-->
+<!--</resources>-->
+<!--<resources>-->
+    <!--<color name="colorPrimaryDark">#53009c</color>-->
+    <!--<color name="colorPrimary">#6c00c9</color>-->
+    <!--<color name="colorAccent">#ff9b00</color>-->
+    <!--<color name="my_statusbar_color">#00FFFFFF</color>-->
+    <!--<color name="transparent">#aaffffff</color>-->
+    <!--<color name="white">#ffffff</color>-->
+<!--</resources>-->
+<resources>
+    <color name="colorPrimaryDark">#474b96</color>
+    <color name="colorPrimary">#5b68bf</color>
+    <color name="colorAccent">#ff9b00</color>
+    <color name="my_statusbar_color">#00FFFFFF</color>
+    <color name="transparent">#aaffffff</color>
+    <color name="almostBlack">#10000000</color>
+    <color name="white">#ffffff</color>
+    <color name="green">#00c700</color>
+    <color name="lightAccent">#ffd79a</color>
+    <color name="group_gray">#999595</color>
+    <color name="room_join">#646464</color>
+    <color name="grey_400">#bdbdbd</color>
+    <color name="blue_800">#3b50ce</color>
+</resources>
+    <!--FF995BBF-->

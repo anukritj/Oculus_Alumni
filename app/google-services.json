@@ -1,0 +1,88 @@
+{
+  "project_info": {
+    "project_number": "158203538938",
+    "firebase_url": "https://oculusapp-ae493.firebaseio.com",
+    "project_id": "oculusapp-ae493",
+    "storage_bucket": "oculusapp-ae493.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158203538938:android:9b20e6881bc7bdd7",
+        "android_client_info": {
+          "package_name": "com.spit.fest.oculus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "158203538938-hth8eqnl89lm4dvmajubtoblhih4b483.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.spit.fest.oculus",
+            "certificate_hash": "5d38bb89c0ce23a24cf159b6e2751b84cdcddfa4"
+          }
+        },
+        {
+          "client_id": "158203538938-lr62usnfkts3k78ahf17ufeto4c8onvh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.spit.fest.oculus",
+            "certificate_hash": "846293eb37af65ee5863a6cd8d3ffd86a48624cf"
+          }
+        },
+        {
+          "client_id": "158203538938-qas6vv0sebf7m1ju7kh2dfhqirunli6i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.spit.fest.oculus",
+            "certificate_hash": "81796d4ef12dafdc8affb04fc0aed366d9703172"
+          }
+        },
+        {
+          "client_id": "158203538938-5nmcf7pihutqbnj818bcme079use0ke5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.spit.fest.oculus",
+            "certificate_hash": "b77099eb09cb5215a04cfd0c334a294c56a27dcf"
+          }
+        },
+        {
+          "client_id": "158203538938-4j0njoanm9qn5p4ptetdinutqdug2g2d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.spit.fest.oculus",
+            "certificate_hash": "9a003f87d67054c491855b71ecd7b27c534df00f"
+          }
+        },
+        {
+          "client_id": "158203538938-qvkdihg4do4vt5hfugsingcjn9lh90f2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.spit.fest.oculus",
+            "certificate_hash": "49dbdf688fea16a4e74476b88bf8bddef8aa1947"
+          }
+        },
+        {
+          "client_id": "158203538938-k2rsnjpif3c5cm7rnr8di8h767cbvfu4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwU2nRKke2ewRfGuJnfwd67uKQTfHw6Uo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "158203538938-k2rsnjpif3c5cm7rnr8di8h767cbvfu4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

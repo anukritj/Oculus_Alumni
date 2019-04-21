@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">S.P.I.T Alumni Connect</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="about_genz">As December 31 of 1999 bled into January 1 of 2000, an era ended and another began. And unlike the millennials, who got to see the change with their young eyes, we were born into the change. We are Generation Z, and we are as old as this new century is. We have seen everything change and been a part of the change - we have used both flip phones and smart phones, connected to the Internet using both dial-ups and WiFi, played both 8-bit games and The Last of Us. We went from playing songs on cassettes to Spotify, from watching movies on cable to Netflix. And it\'s not just self-reinvention that we\'ve done smoothly - we have made the change around us better. SPIT found this generation a fitting encapsulation of Oculus 2k19, and is proud to announce the theme for the same - Generation Z.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

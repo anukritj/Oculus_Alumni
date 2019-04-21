@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/main_gradient"
+    tools:context=".Fragments.BottomNavigationFragments.ProfileFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_below="@id/rootLinear"
+            android:layout_marginTop="-50dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/white_oval"/>
+
+        <LinearLayout
+            android:id="@+id/rootLinear"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="#ffffff"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <ProgressBar
+                    android:id="@+id/profile_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
+
+                <com.joooonho.SelectableRoundedImageView
+                    android:id="@+id/profilePic"
+                    android:src="@color/colorAccent"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    app:sriv_right_top_corner_radius="75dp"
+                    app:sriv_right_bottom_corner_radius="75dp"
+                    app:sriv_left_top_corner_radius="75dp"
+                    app:sriv_left_bottom_corner_radius="75dp"
+                    app:sriv_border_color="@color/colorPrimary"
+                    android:layout_gravity="center"
+                    android:layout_margin="25dp"
+                    app:sriv_border_width="2dp" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/profileName"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textColor="@color/colorPrimary"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/colorPrimaryDark"
+                android:layout_margin="15dp"/>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/manageProfile"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/button_background"
+                    android:src="@drawable/ic_account_circle_black_24dp"
+                    app:layout_constraintEnd_toStartOf="@+id/profile_view"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/logout"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/button_background"
+                    android:src="@drawable/ic_exit_to_app_black_24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/profile_view"/>
+
+                <View
+                    android:id="@+id/profile_view"
+                    android:layout_width="3dp"
+                    android:layout_height="0dp"
+                    android:background="@color/colorPrimary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:text="Manage Profile"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/manageProfile"
+                    app:layout_constraintStart_toStartOf="@+id/manageProfile"
+                    app:layout_constraintTop_toBottomOf="@+id/manageProfile" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:text="Logout"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/logout"
+                    app:layout_constraintStart_toStartOf="@+id/logout"
+                    app:layout_constraintTop_toBottomOf="@+id/logout" />
+
+                <ImageButton
+                    android:id="@+id/aboutUs"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/button_background"
+                    android:src="@drawable/ic_group_black_24dp"
+                    app:layout_constraintEnd_toEndOf="@+id/profile_view"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textView3"
+                    android:layout_marginTop="8dp"/>
+
+                <ImageButton
+                    android:id="@+id/ngo"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/button_background"
+                    android:src="@drawable/ic_image2vector"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/profile_view"
+                    app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:text="About Us"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/aboutUs"
+                    app:layout_constraintStart_toStartOf="@+id/aboutUs"
+                    app:layout_constraintTop_toBottomOf="@id/aboutUs" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:text="Oculus For A Cause"
+                    android:textColor="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="@+id/ngo"
+                    app:layout_constraintStart_toStartOf="@+id/ngo"
+                    app:layout_constraintTop_toBottomOf="@+id/ngo" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
