@@ -142,10 +142,10 @@ public class EventFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         int count = 3;
-        if (this.getArguments() != null) {
-            Bundle bundle = this.getArguments();
-            count = bundle.getInt("Count", 1);
-        }
+//        if (this.getArguments() != null) {
+//            Bundle bundle = this.getArguments();
+//            count = bundle.getInt("Count", 1);
+//        }
 
         int index = count - 1;
 

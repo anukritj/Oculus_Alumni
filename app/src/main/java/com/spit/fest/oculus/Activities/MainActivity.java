@@ -20,16 +20,16 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.spit.fest.oculus.Fragments.BottomNavigationFragments.DashboardFragment;
 import com.spit.fest.oculus.Fragments.BottomNavigationFragments.EventFragment;
 import com.spit.fest.oculus.Fragments.BottomNavigationFragments.FriendsFragment;
 import com.spit.fest.oculus.Fragments.BottomNavigationFragments.GoogleAssistantFragment;
 import com.spit.fest.oculus.Fragments.BottomNavigationFragments.NotificationsFragment;
 import com.spit.fest.oculus.Fragments.BottomNavigationFragments.ProfileFragment;
-import com.spit.fest.oculus.Fragments.BottomNavigationFragments.Sponsors;
-import com.spit.fest.oculus.Fragments.Sponsors.SponsorFragment;
 import com.spit.fest.oculus.Fragments.BottomNavigationFragments.TimeTableFragment;
 import com.spit.fest.oculus.Fragments.OtherFragments.AboutUsFragment;
 import com.spit.fest.oculus.Fragments.OtherFragments.NGOFragment;
+import com.spit.fest.oculus.Fragments.Sponsors.SponsorFragment;
 import com.spit.fest.oculus.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,12 +38,11 @@ public class MainActivity extends AppCompatActivity {
     public static BottomNavigationView navigation;
     public static Fragment fragment;
     private final EventFragment eventFragment = EventFragment.getEventFragment();
-    private final Sponsors sponsorFragment = Sponsors.getFrag();
+//    private final Sponsors sponsorFragment = Sponsors.getFrag();
     private final FriendsFragment friendsFragment= FriendsFragment.getHomeFragment();
     //private TimeTableFragment timeTableFragment = TimeTableFragment.getTimeTableFragment();
-    private NotificationsFragment timeTableFragment = NotificationsFragment.getNotificationsFragment();
-
-
+    private final NotificationsFragment timeTableFragment = NotificationsFragment.getNotificationsFragment();
+    private final DashboardFragment dashboardFragment = DashboardFragment.getDashboardFragment();
     private final GoogleAssistantFragment googleAssistantFragment = GoogleAssistantFragment.getGoogleAssistantFragment();
     private final ProfileFragment profileFragment = ProfileFragment.getProfileFragment();
 
@@ -69,9 +68,13 @@ public class MainActivity extends AppCompatActivity {
                     if (fragment != googleAssistantFragment)
                         replaceFragment(googleAssistantFragment);
                     return true;
-                case R.id.navigation_others:
-                    if (fragment != profileFragment)
-                        replaceFragment(profileFragment);
+//                case R.id.navigation_others:
+//                    if (fragment != profileFragment)
+//                        replaceFragment(profileFragment);
+//                    return true;
+                case R.id.navigation_feed:
+                    if (fragment != dashboardFragment)
+                        replaceFragment(dashboardFragment);
                     return true;
             }
             return false;

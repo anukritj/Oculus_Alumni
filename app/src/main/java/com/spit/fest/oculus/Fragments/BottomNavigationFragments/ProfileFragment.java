@@ -20,7 +20,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.joooonho.SelectableRoundedImageView;
 import com.spit.fest.oculus.Activities.LoginActivity;
-import com.spit.fest.oculus.Activities.MainActivity;
 import com.spit.fest.oculus.Activities.SwipeActivity;
 import com.spit.fest.oculus.Fragments.OtherFragments.AboutUsFragment;
 import com.spit.fest.oculus.Fragments.OtherFragments.NGOFragment;
@@ -60,8 +59,8 @@ public class ProfileFragment extends Fragment {
             }
         };
 
-        MainActivity.fragment = getProfileFragment();
-        MainActivity.navigation.setSelectedItemId(R.id.navigation_others);
+//        MainActivity.fragment = getProfileFragment();
+//        MainActivity.navigation.setSelectedItemId(R.id.navigation_others);
 
         return inflater.inflate(R.layout.fragment_profile, container, false);
     }

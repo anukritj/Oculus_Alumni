@@ -46,7 +46,7 @@ import java.util.List;
 import static com.google.android.exoplayer2.C.VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING;
 import static com.google.android.exoplayer2.Player.STATE_ENDED;
 
-public cpwlass LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private static final int RC_SIGN_IN = 200;
 
@@ -225,7 +225,7 @@ public cpwlass LoginActivity extends AppCompatActivity {
 
             if (Build.VERSION.SDK_INT >= 23)
             {
-                Intent intent=new Intent(this,SwipeActivity.class);
+                Intent intent=new Intent(this,MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 finish();
