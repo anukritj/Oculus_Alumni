@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.spit.fest.oculus.HelperClass.FeedDatabase;
 import com.spit.fest.oculus.HelperClass.Post;
 import com.spit.fest.oculus.R;
@@ -52,7 +53,10 @@ public class NewPost extends AppCompatActivity {
                 String status = editText.getText().toString();
                 if (imageUrl != null || !status.isEmpty())
                 {
-                    Post post = new Post(imageUrl, status);
+                    Post post = new Post(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getDisplayName()
+                                        , Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl()).toString()
+                                        , imageUrl
+                                        , status);
                     FeedDatabase.getInstance(NewPost.this).postDao().insertPost(post);
                     finish();
                 }

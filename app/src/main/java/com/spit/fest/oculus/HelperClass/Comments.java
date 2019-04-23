@@ -14,16 +14,36 @@ public class Comments
     @ForeignKey(entity = Post.class, parentColumns = {"postId"}, childColumns = {"postId"}, onDelete = ForeignKey.CASCADE)
     private int postId;
     private String userId;
+    private String username;
+    private String imageUrl;
     private String comment;
 
     @Ignore
-    public Comments(int postId, String userId, String comment) {
+    public Comments(int postId, String userId, String username, String imageUrl, String comment) {
         this.postId = postId;
         this.userId = userId;
+        this.username = username;
+        this.imageUrl = imageUrl;
         this.comment = comment;
     }
 
     public Comments() {
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public int getCommentId() {

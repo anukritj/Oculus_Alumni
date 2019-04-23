@@ -1,7 +1,6 @@
 package com.spit.fest.oculus.Fragments.BottomNavigationFragments;
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -48,9 +47,6 @@ public class DashboardFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        Log.e("Function", "onCreateView");
-
         // Inflate the layout for this fragment
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -77,9 +73,6 @@ public class DashboardFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-
-        Log.e("Function", "onViewCreated");
-
 //        ImageView profileImage = view.findViewById(R.id.show_profile);
 //        ImageUtils.newInstance().setCircleCropImage(view.getContext(), Objects.requireNonNull(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getPhotoUrl()).toString(), profileImage, null);
 //        profileImage.setOnClickListener(new View.OnClickListener() {
@@ -123,7 +116,6 @@ public class DashboardFragment extends Fragment {
     public void onStart() {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
-        Log.e("Function", "onStart");
     }
 
     @Override
@@ -132,7 +124,6 @@ public class DashboardFragment extends Fragment {
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
         }
-        Log.e("Function", "onStop");
     }
 
     @Override
@@ -154,34 +145,10 @@ public class DashboardFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Log.e("Function", "onCreate");
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        Log.e("Function", "onPause");
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        Log.e("Function", "onAttach");
-    }
-
-    @Override
     public void onResume() {
         super.onResume();
         Log.e("Function", "onResume");
         dashboardAdapter.populateArrayList();
         recyclerView.setAdapter(dashboardAdapter);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        Log.e("Function", "onDestroy");
     }
 }

@@ -3,7 +3,9 @@ package com.spit.fest.oculus.HelperClass;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.spit.fest.oculus.Fragments.OtherFragments.CommentsFragment;
 import com.spit.fest.oculus.R;
 import com.spit.fest.oculus.Utils.ImageUtils;
 
@@ -54,6 +57,9 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
     @Override
     public void onBindViewHolder(@NonNull final DashboardViewHolder dashboardViewHolder, int i) {
         final Post post = postArrayList.get(i);
+        dashboardViewHolder.setPostId(post.getPostId());
+        dashboardViewHolder.setUsername(post.getUsername());
+        dashboardViewHolder.setProfilePicture(post.getProfilePicture());
         dashboardViewHolder.setImage(post.getImageUrl());
         dashboardViewHolder.setStatus(post.getStatus());
         dashboardViewHolder.setLikes(FeedDatabase.getInstance(context).likesDao().fetchLikesCount(post.getPostId()),
@@ -82,7 +88,9 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
 
     class DashboardViewHolder extends RecyclerView.ViewHolder
     {
-
+        private int postId = -1;
+        private ImageView profilePicture;
+        private TextView username;
         private ImageView imageView;
         private TextView textView;
         ConstraintLayout likeConstraintLayout;
@@ -92,11 +100,23 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
         DashboardViewHolder(@NonNull View itemView)
         {
             super(itemView);
+            profilePicture = itemView.findViewById(R.id.profile_picture);
+            username = itemView.findViewById(R.id.username);
             imageView = itemView.findViewById(R.id.dashboard_image);
             textView = itemView.findViewById(R.id.dashboard_status);
             likeConstraintLayout = itemView.findViewById(R.id.likeConstraintLayout);
             likeTextView = itemView.findViewById(R.id.likeTextView);
             commentConstraintLayout = itemView.findViewById(R.id.commentConstraintLayout);
+            commentConstraintLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (postId != -1)
+                    {
+                        CommentsFragment commentsFragment = CommentsFragment.newInstance(postId);
+                        commentsFragment.show(((AppCompatActivity)context).getSupportFragmentManager(), "comment_bottomsheet");
+                    }
+                }
+            });
         }
 
         void setImage(String imageUrl)
@@ -130,5 +150,20 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardAdapter.Dash
             }
         }
 
+        void setUsername(String username)
+        {
+            this.username.setText(username);
+        }
+
+        void setProfilePicture(String profilePicture)
+        {
+            Log.e("ProfilePic", profilePicture);
+            ImageUtils.newInstance().setImageWithPlaceholder(context, profilePicture, this.profilePicture, R.drawable.ic_person_black_24dp);
+        }
+
+        void setPostId(int postId)
+        {
+            this.postId = postId;
+        }
     }
 }
