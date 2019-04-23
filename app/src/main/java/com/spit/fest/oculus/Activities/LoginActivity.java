@@ -46,7 +46,7 @@ import java.util.List;
 import static com.google.android.exoplayer2.C.VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING;
 import static com.google.android.exoplayer2.Player.STATE_ENDED;
 
-public cpwlass LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private static final int RC_SIGN_IN = 200;
 
