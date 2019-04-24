@@ -9,8 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.spit.fest.oculus.Friends;
-import com.spit.fest.oculus.FriendsAdapter;
+import com.spit.fest.oculus.HelperClass.Friends;
+import com.spit.fest.oculus.HelperClass.FriendsAdapter;
 import com.spit.fest.oculus.R;
 
 import java.util.ArrayList;

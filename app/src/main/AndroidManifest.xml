@@ -4,48 +4,46 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Activities.SwipeActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.MainActivity"
+        android:theme="@style/AppTheme"
+        android:largeHeap="true">
+        <activity android:name=".Activities.NewPost"/>
+        <activity
+            android:name=".Activities.SwipeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.LoginActivity"
+        <activity
+            android:name=".Activities.LoginActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!--<activity android:name=".Activities.CartActivity"-->
-            <!--android:screenOrientation="portrait"/>-->
-
-        <service android:name=".Services.FcmService" >
+        </activity> <!-- <activity android:name=".Activities.CartActivity" -->
+        <!-- android:screenOrientation="portrait"/> -->
+        <service android:name=".Services.FcmService">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
-
         </service>
-
 
         <meta-data
             android:name="com.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/dfs"
-            />
-
-
-
+            android:resource="@drawable/dfs" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

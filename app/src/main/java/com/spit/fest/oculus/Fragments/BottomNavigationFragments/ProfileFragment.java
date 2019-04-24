@@ -61,7 +61,7 @@ public class ProfileFragment extends Fragment {
         };
 
         MainActivity.fragment = getProfileFragment();
-        MainActivity.navigation.setSelectedItemId(R.id.navigation_others);
+//        MainActivity.navigation.setSelectedItemId(R.id.navigation_others);
 
         return inflater.inflate(R.layout.fragment_profile, container, false);
     }

@@ -225,7 +225,7 @@ public class LoginActivity extends AppCompatActivity {
 
             if (Build.VERSION.SDK_INT >= 23)
             {
-                Intent intent=new Intent(this,SwipeActivity.class);
+                Intent intent=new Intent(this,MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 finish();

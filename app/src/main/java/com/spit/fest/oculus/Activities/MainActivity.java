@@ -20,14 +20,12 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.spit.fest.oculus.Fragments.BottomNavigationFragments.DashboardFragment;
 import com.spit.fest.oculus.Fragments.BottomNavigationFragments.EventFragment;
 import com.spit.fest.oculus.Fragments.BottomNavigationFragments.FriendsFragment;
 import com.spit.fest.oculus.Fragments.BottomNavigationFragments.GoogleAssistantFragment;
 import com.spit.fest.oculus.Fragments.BottomNavigationFragments.NotificationsFragment;
 import com.spit.fest.oculus.Fragments.BottomNavigationFragments.ProfileFragment;
-import com.spit.fest.oculus.Fragments.BottomNavigationFragments.Sponsors;
-import com.spit.fest.oculus.Fragments.Sponsors.SponsorFragment;
-import com.spit.fest.oculus.Fragments.BottomNavigationFragments.TimeTableFragment;
 import com.spit.fest.oculus.Fragments.OtherFragments.AboutUsFragment;
 import com.spit.fest.oculus.Fragments.OtherFragments.NGOFragment;
 import com.spit.fest.oculus.R;
@@ -38,14 +36,13 @@ public class MainActivity extends AppCompatActivity {
     public static BottomNavigationView navigation;
     public static Fragment fragment;
     private final EventFragment eventFragment = EventFragment.getEventFragment();
-    private final Sponsors sponsorFragment = Sponsors.getFrag();
+//    private final Sponsors sponsorFragment = Sponsors.getFrag();
     private final FriendsFragment friendsFragment= FriendsFragment.getHomeFragment();
     //private TimeTableFragment timeTableFragment = TimeTableFragment.getTimeTableFragment();
-    private NotificationsFragment timeTableFragment = NotificationsFragment.getNotificationsFragment();
-
-
+    private final NotificationsFragment timeTableFragment = NotificationsFragment.getNotificationsFragment();
+    private final DashboardFragment dashboardFragment = DashboardFragment.getDashboardFragment();
     private final GoogleAssistantFragment googleAssistantFragment = GoogleAssistantFragment.getGoogleAssistantFragment();
-    private final ProfileFragment profileFragment = ProfileFragment.getProfileFragment();
+//    private final ProfileFragment profileFragment = ProfileFragment.getProfileFragment();
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -69,9 +66,13 @@ public class MainActivity extends AppCompatActivity {
                     if (fragment != googleAssistantFragment)
                         replaceFragment(googleAssistantFragment);
                     return true;
-                case R.id.navigation_others:
-                    if (fragment != profileFragment)
-                        replaceFragment(profileFragment);
+//                case R.id.navigation_others:
+//                    if (fragment != profileFragment)
+//                        replaceFragment(profileFragment);
+//                    return true;
+                case R.id.navigation_feed:
+                    if (fragment != dashboardFragment)
+                        replaceFragment(dashboardFragment);
                     return true;
             }
             return false;
@@ -122,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         fragmentManager = getSupportFragmentManager();
-        fragment = eventFragment;
+        fragment = dashboardFragment;
         fragment.setArguments(bundle);
         replaceFragment(fragment);
 
@@ -166,8 +167,10 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         if (fragment instanceof AboutUsFragment || fragment instanceof NGOFragment)
             replaceFragment(ProfileFragment.getProfileFragment());
-        else if (fragment instanceof GoogleAssistantFragment || fragment instanceof ProfileFragment || fragment instanceof SponsorFragment || fragment instanceof TimeTableFragment)
-            navigation.setSelectedItemId(R.id.navigation_events);
+        else if (fragment instanceof ProfileFragment)
+            replaceFragment(DashboardFragment.getDashboardFragment());
+        else if (fragment instanceof EventFragment || fragment instanceof GoogleAssistantFragment || fragment instanceof NotificationsFragment || fragment instanceof FriendsFragment)
+            navigation.setSelectedItemId(R.id.navigation_feed);
         else
             super.onBackPressed();
     }
